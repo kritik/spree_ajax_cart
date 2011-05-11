@@ -7,7 +7,8 @@ OrdersController.class_eval do
     flash[:notice] = "Added #{variant.name} to cart"
 
     respond_to do | format |
-      format.js { render :action => 'edit' }  
+      format.js { render :action => 'edit' } 
+      format.html { redirect_to :back }
     end
   end
   
